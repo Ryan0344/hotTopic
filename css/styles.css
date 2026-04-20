@@ -1,0 +1,256 @@
+/* Variables */
+:root {
+    --black: #0b0b0c;
+    --white: #ffffff;
+
+    /* Grayscale */
+    --gray-900: #1a1a1a;
+    --gray-800: #2b2b2b;
+    --gray-700: #3d3d3d;
+    --gray-500: #7a7a7a;
+    --gray-300: #c9c9c9;
+    --gray-200: #e2e2e2;
+    --gray-100: #f5f5f5;
+
+    /* Fonts */
+    --text-font: 'Open Sans', sans-serif;
+    --heading-font: 'Merriweather', serif;
+
+    /* Styling */
+    --spacing: 1rem;
+    --bg: var(--white);
+    --text: var(--black);
+    --border: var(--gray-200);
+    --surface: var(--gray-100);
+}
+
+/* Base styling  */
+body {
+    margin: 0;
+    font-family: var(--text-font);
+    line-height: 1.5;
+    background: var(--bg);
+    color: var(--text);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2 {
+    font-family: var(--heading-font);
+}
+
+/* Masthead with hero image and nav styling */
+.hero-header {
+    background: url('../img/masthead.jpg') no-repeat center/cover;
+    min-height: 60vh;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.nav-container,
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.logo {
+    margin: 0;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Wrapper */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing);
+}
+
+/* Articles styling */
+.articles {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem 1rem;
+}
+
+.articles article {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    align-items: center;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+
+    transition: transform 0.2s ease;
+}
+
+.articles article:hover {
+    transform: translateY(-4px);
+}
+
+.articles figure {
+    margin: 0;
+    height: 100%;
+}
+
+.articles img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.articles figcaption {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    padding: 0.5rem 1rem;
+    background: var(--gray-100);
+}
+
+.articles div {
+    padding: 1.5rem;
+}
+
+.articles h2 {
+    margin-top: 0;
+}
+
+.articles p {
+    color: var(--gray-700);
+    line-height: 1.6;
+}
+
+/* Portfolio styling  */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* DESKTOP */
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.portfolio .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.portfolio .card:hover {
+    transform: translateY(-4px);
+}
+
+.portfolio .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+/* Responisve */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .portfolio {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .articles article {
+        grid-template-columns: 1fr;
+    }
+
+    .articles figure {
+        height: 220px;
+    }
+}
+
+/* Footer */
+.site-footer {
+    background: var(--gray-900);
+    color: #fff;
+    text-align: center;
+    padding: 2rem var(--spacing);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* icon styling */ 
+.social-icons a {
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #fff;
+    color: #000;
+}
